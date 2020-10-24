@@ -1,3 +1,6 @@
+#' @param df,a,N 3 inputs
+#' @return adjacency matrix of the simulated network, dataframe of the simulated network, number of mismatches in the building process
+#' @export
 # ==================== function: ExtrapolateNetwork===================
 ExtrapolateNetwork <- function(df, # the dataframe of ego networks from survey
                                a, # the number of different values the attribute can take
