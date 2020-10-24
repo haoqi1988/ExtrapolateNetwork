@@ -60,12 +60,12 @@ head(df)
 ```
 
     ##   attribute degree a b c
-    ## 1         b      4 2 1 1
-    ## 2         a      7 0 3 4
-    ## 3         a      4 1 1 2
-    ## 4         a      1 0 1 0
-    ## 5         b      7 2 1 4
-    ## 6         a      4 1 3 0
+    ## 1         c      7 2 3 2
+    ## 2         b      8 2 3 3
+    ## 3         c      4 3 1 0
+    ## 4         b      7 3 2 2
+    ## 5         b      7 3 1 3
+    ## 6         c      1 1 0 0
 
 ``` r
 # the dataframe have to be prepared in this above structure. You can have more attributes, under other names as long as they are consistent
@@ -80,18 +80,8 @@ N <- 200
 
 ## Run the package
 
-``` r
-library(ExtrapolateNetwork)
-results <- ExtrapolateNetwork(df,a,N)
-attributes(results)
-```
-
     ## $names
     ## [1] "AdjacencyMat" "AgentsDf"     "MisMatch"
-
-``` r
-library(igraph)
-```
 
     ## 
     ## Attaching package: 'igraph'
@@ -104,29 +94,7 @@ library(igraph)
     ## 
     ##     union
 
-``` r
-G <- graph_from_adjacency_matrix(adjmatrix = results$AdjacencyMat, 
-                            mode = "undirected",
-                            weighted = NULL,
-                            diag = F, 
-                            add.colnames = NULL, add.rownames = NULL)
-```
-
     ## Warning in graph_from_adjacency_matrix(adjmatrix = results$AdjacencyMat, : Same
     ## attribute for columns and rows, row names are ignored
 
-``` r
-plot(density(degree(G)))
-```
-
-![](Untitled_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
-
-``` r
-plot(density(df$degree))
-```
-
-![](Untitled_files/figure-gfm/unnamed-chunk-4-2.png)<!-- -->
-
-``` r
-# there is some deviation in the extrapolated degree distribution from the empirical input. Users could mannually adjust for fine tuning. 
-```
+![](Untitled_files/figure-gfm/pressure-1.png)<!-- -->![](Untitled_files/figure-gfm/pressure-2.png)<!-- -->
