@@ -3,7 +3,7 @@ Type: Package
 Title: Extrapolates a Full Network of Desired Size Based on Data of Ego Networks
 Version: 0.1.0
 Author: Qi Hao
-Maintainer: hao.qi1988@protonmail.com
+Maintainer: Qi Hao <hao.qi1988@protonmail.com>
 Description: This package is designed to generate full networks for ABMs from survey data.
     For example, the survey asked people about their attributes, say, ethnicity, and also asked them 
     whom they friend with, what attributes their friends have, and how many such friends they each have.
